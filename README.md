@@ -1,3 +1,17 @@
+# AIRDESK
+
+**AIRDESK** é o app de acesso remoto da **AIR Soluções Inteligentes** ([agenciaair.tech](https://agenciaair.tech)), usado no suporte aos nossos clientes, com servidor próprio.
+
+É uma versão modificada do [RustDesk](https://github.com/rustdesk/rustdesk), distribuída sob a mesma licença **AGPL-3.0** (ver [LICENCE](LICENCE)). Os avisos de copyright originais foram mantidos. O código-fonte completo desta versão está neste repositório.
+
+- Downloads: aba **Releases** deste repositório.
+- Build: **Actions → AIRDESK Build → Run workflow** (Windows x64 + Android).
+- O que foi alterado: nome, ícones, app id Android (`tech.agenciaair.airdesk`) e servidor embutido (`airdesk/apply_branding.py`).
+
+---
+
+*README original do projeto RustDesk abaixo.*
+
 <p align="center">
   <img src="res/logo-header.svg" alt="RustDesk - Your remote desktop"><br>
   <a href="#raw-steps-to-build">Build</a> •

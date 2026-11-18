@@ -589,7 +589,7 @@ jobs:
         run: |
           cd signed-apk
           if [ -n "${{ steps.sign-apk.outputs.signedReleaseFile }}" ]; then
-            mv "${{ steps.sign-apk.outputs.signedReleaseFile }}" final.apk.tmp
+            mv "$(basename "${{ steps.sign-apk.outputs.signedReleaseFile }}")" final.apk.tmp
             rm -f *.apk; mv final.apk.tmp AIRDESK-${{ env.VERSION }}-android-${{ matrix.job.arch }}.apk
           else
             mv AIRDESK-${{ env.VERSION }}-${{ matrix.job.arch }}.apk AIRDESK-${{ env.VERSION }}-android-${{ matrix.job.arch }}.apk

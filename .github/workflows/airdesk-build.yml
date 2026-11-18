@@ -308,6 +308,10 @@ jobs:
     needs: [generate-bridge]
     name: build AIRDESK android apk ${{ matrix.job.target }}
     runs-on: ${{ matrix.job.os }}
+    # os secrets de assinatura foram cadastrados no environment "ANDROID_SIGNING_KEY"
+    environment: ANDROID_SIGNING_KEY
+    env:
+      ANDROID_SIGNING_KEY: "${{ secrets.ANDROID_SIGNING_KEY }}"
     strategy:
       fail-fast: false
       matrix:

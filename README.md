@@ -6,7 +6,7 @@
 
 - Downloads: aba **Releases** deste repositório.
 - Build: **Actions → AIRDESK Build → Run workflow** (Windows x64 + Android).
-- O que foi alterado: nome, ícones, app id Android (`tech.agenciaair.airdesk`) e servidor embutido (`airdesk/apply_branding.py`).
+- O que foi alterado: nome, ícones e cores da AIR (tema escuro por padrão), app id Android (`tech.agenciaair.airdesk`) e servidor embutido (`airdesk/apply_branding.py`).
 
 ---
 

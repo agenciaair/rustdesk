@@ -1,12 +1,15 @@
-"""Gera os icones do AIRDESK a partir de airdesk/logo-air.jpg (logo branco/verde sobre preto).
+"""Gera os icones do AIRDESK com a identidade da AIR (a mesma do admin.agenciaair.tech):
+- airdesk/air-icon.png: simbolo "AR" sobre #111 (favicon do admin) -> icones do app
+- airdesk/air-logo.png: logotipo "AiR" em PNG transparente -> logo dentro do app
 Uso (na raiz do repo): python airdesk/gen_icons.py
 """
 import os
 from PIL import Image, ImageChops
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, "airdesk", "logo-air.jpg")
-BG = (0, 0, 0, 255)
+SRC = os.path.join(ROOT, "airdesk", "air-icon.png")
+WORDMARK = os.path.join(ROOT, "airdesk", "air-logo.png")
+BG = (17, 17, 17, 255)  # #111, fundo do icone do admin
 
 
 def p(*a):
@@ -87,7 +90,8 @@ for name in ["mac-tray-dark-x2.png", "mac-tray-light-x2.png"]:
 
 # --- flutter/assets (icone e logo dentro do app) ---
 save(square(512, radius=0.18), "flutter", "assets", "icon.png")
-wordmark = logo.copy()
+wordmark = Image.open(WORDMARK).convert("RGBA")
+wordmark = wordmark.crop(wordmark.getbbox())
 wordmark.thumbnail((600, 120), Image.LANCZOS)
 save(wordmark, "flutter", "assets", "logo_dark.png")  # tema escuro: letras brancas
 dark_letters = wordmark.copy()
